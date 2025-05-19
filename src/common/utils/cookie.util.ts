@@ -13,4 +13,8 @@ export class CookieUtil {
   static clearToken(res: Response) {
     res.clearCookie(this.tokenKey);
   }
+
+  static getToken(req: any): string | null {
+    return req.cookies?.[this.tokenKey] || null;
+  }
 }

@@ -7,6 +7,7 @@ import {
 } from '@proto/auth/auth';
 import { LoginDto, RegisterDto, RemoveSessionsDto } from './dto';
 import { firstValueFrom } from 'rxjs';
+import { Metadata } from '@grpc/grpc-js';
 
 @Injectable()
 export class AuthService implements OnModuleInit {
@@ -38,16 +39,16 @@ export class AuthService implements OnModuleInit {
     );
   }
 
-  async refresh() {
-    return await firstValueFrom(this.authService.refresh({}));
+  async refresh(metadata: Metadata) {
+    return await firstValueFrom(this.authService.refresh({}, metadata));
   }
 
-  async logout() {
-    return await firstValueFrom(this.authService.logout({}));
+  async logout(metadata: Metadata) {
+    return await firstValueFrom(this.authService.logout({}, metadata));
   }
 
-  async getSessions() {
-    return await firstValueFrom(this.authService.getSessions({}));
+  async getSessions(metadata: Metadata) {
+    return await firstValueFrom(this.authService.getSessions({}, metadata));
   }
 
   async removeSessions(removeSessionsDto: RemoveSessionsDto) {

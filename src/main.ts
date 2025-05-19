@@ -7,11 +7,13 @@ import { ValidationPipe } from '@nestjs/common';
 import * as cookieParser from 'cookie-parser';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { CONFIG, ENDPOINTS } from '@common/constants';
+import { GrpcExceptionFilter } from '@common/filters';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.enableCors();
   app.useGlobalInterceptors(new GlobalInterceptor());
+  app.useGlobalFilters(new GrpcExceptionFilter());
   app.use(cookieParser());
   app.setGlobalPrefix(ENDPOINTS.BASE);
   app.useGlobalPipes(
