@@ -18,7 +18,7 @@
 		"test:cov": "jest --coverage",
 		"test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
 		"test:e2e": "jest --config ./test/jest-e2e.json",
-		"generate:from:proto": "protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto --proto_path=./src/lib/common/src/proto --ts_proto_out=./src/lib/common/src/proto --ts_proto_opt=nestJs=true user/user.proto common/common.proto auth/auth.proto"
+		"generate:from:proto": "protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto --proto_path=./src/lib/common/src/proto --ts_proto_out=./src/lib/common/src/proto --ts_proto_opt=nestJs=true user/user.proto common/common.proto auth/auth.proto review/review.proto films/films.proto"
 	},
 	"dependencies": {
 		"@grpc/grpc-js": "^1.13.3",
@@ -33,6 +33,7 @@
 		"class-transformer": "^0.5.1",
 		"class-validator": "^0.14.2",
 		"cookie-parser": "^1.4.7",
+		"dotenv": "^16.5.0",
 		"nestjs-pino": "^4.4.0",
 		"pino-http": "^10.4.0",
 		"pino-pretty": "^13.0.0",

@@ -9,6 +9,14 @@ export const ENDPOINTS = {
     GET_SESSIONS: '/sessions',
     REMOVE_SESSIONS: '/sessions',
   },
+  FILMS: {
+    BASE: '/films',
+    CREATE: '/',
+    FIND_ALL: '/',
+    FIND_ONE: '/:id',
+    UPDATE: '/:id',
+    REMOVE: '/:id',
+  },
 } as const;
 
 Object.freeze(ENDPOINTS);

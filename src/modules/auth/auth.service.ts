@@ -51,11 +51,17 @@ export class AuthService implements OnModuleInit {
     return await firstValueFrom(this.authService.getSessions({}, metadata));
   }
 
-  async removeSessions(removeSessionsDto: RemoveSessionsDto) {
+  async removeSessions(
+    removeSessionsDto: RemoveSessionsDto,
+    metadata: Metadata,
+  ) {
     return await firstValueFrom(
-      this.authService.removeSessions({
-        ids: removeSessionsDto.ids,
-      }),
+      this.authService.removeSessions(
+        {
+          ids: removeSessionsDto.ids,
+        },
+        metadata,
+      ),
     );
   }
 }

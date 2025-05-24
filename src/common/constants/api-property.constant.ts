@@ -1,4 +1,8 @@
 export const API_PROPERTY = {
+  ID: {
+    description: 'Unique identifier for the resource',
+    example: 'id-12345',
+  },
   EMAIL: {
     description: 'User email address',
     example: 'user@example.com',
@@ -17,6 +21,33 @@ export const API_PROPERTY = {
     example: ['id-1', 'id-2'],
     isArray: true,
     type: String,
+  },
+  FILMS: {
+    TITLE: {
+      description: 'Title of the film',
+      example: 'The Shawshank Redemption',
+    },
+    DESCRIPTION: {
+      description: 'Description of the film',
+      example:
+        'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
+    },
+    DIRECTOR: {
+      description: 'Director of the film',
+      example: 'Frank Darabont',
+    },
+    RELEASE_DATE: {
+      description: 'Release date of the film',
+      example: '1994-09-23',
+    },
+    GENRE: {
+      description: 'Genre of the film',
+      example: 'Drama',
+    },
+    BACKGROUND_IMAGE_KEY: {
+      description: 'Background image key for the film',
+      example: 'film-background.jpg',
+    },
   },
 } as const;
 

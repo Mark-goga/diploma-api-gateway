@@ -1,4 +1,5 @@
 import { Response } from 'express';
+import { CONFIG } from '@common/constants';
 
 export class CookieUtil {
   private static readonly tokenKey = 'refreshToken';
@@ -6,7 +7,7 @@ export class CookieUtil {
   static setToken(res: Response, token: string) {
     res.cookie(this.tokenKey, token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV !== 'development',
+      secure: CONFIG.NODE_ENV !== 'development',
     });
   }
 

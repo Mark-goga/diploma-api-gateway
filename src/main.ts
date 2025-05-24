@@ -11,7 +11,10 @@ import { GrpcExceptionFilter } from '@common/filters';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
-  app.enableCors();
+  app.enableCors({
+    origin: true,
+    credentials: true,
+  });
   app.useGlobalInterceptors(new GlobalInterceptor());
   app.useGlobalFilters(new GrpcExceptionFilter());
   app.use(cookieParser());
@@ -22,6 +25,9 @@ async function bootstrap() {
       transform: true,
       forbidNonWhitelisted: true,
       forbidUnknownValues: true,
+      transformOptions: {
+        enableImplicitConversion: true,
+      },
     }),
   );
 

@@ -25,6 +25,28 @@ export const API_OPERATION = {
       summary: 'Remove sessions operation',
     },
   },
+  FILMS: {
+    CREATE: {
+      description: 'Create a new film in the system',
+      summary: 'Create film operation',
+    },
+    FIND_ALL: {
+      description: 'Get all films with pagination, filtering and searching',
+      summary: 'Get all films operation',
+    },
+    FIND_ONE: {
+      description: 'Get film by ID',
+      summary: 'Get film by ID operation',
+    },
+    UPDATE: {
+      description: 'Update film information',
+      summary: 'Update film operation',
+    },
+    REMOVE: {
+      description: 'Remove film from the system',
+      summary: 'Remove film operation',
+    },
+  },
 } as const;
 
 Object.freeze(API_OPERATION);

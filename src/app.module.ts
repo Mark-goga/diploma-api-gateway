@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { LoggerModule } from 'nestjs-pino';
 import { CONFIG } from '@common/constants';
 import { AuthModule } from '@modules/auth/auth.module';
+import { FilmsModule } from '@modules/films/films.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { AuthModule } from '@modules/auth/auth.module';
       },
     }),
     AuthModule,
+    FilmsModule,
   ],
   controllers: [],
   providers: [],

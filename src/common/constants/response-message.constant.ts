@@ -7,6 +7,13 @@ export const RESPONSE_MESSAGES = {
     GET_SESSIONS: 'User sessions retrieved successfully',
     REMOVE_SESSIONS: 'Selected sessions removed successfully',
   },
+  FILMS: {
+    CREATE: 'Film created successfully',
+    FIND_ALL: 'Films retrieved successfully',
+    FIND_ONE: 'Film retrieved successfully',
+    UPDATE: 'Film updated successfully',
+    REMOVE: 'Film removed successfully',
+  },
 } as const;
 
 Object.freeze(RESPONSE_MESSAGES);

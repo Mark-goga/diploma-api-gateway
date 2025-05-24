@@ -92,8 +92,14 @@ export class AuthController {
   @UseGuards(TokenGuard)
   @Delete(ENDPOINTS.AUTH.REMOVE_SESSIONS)
   @HttpCode(HttpStatus.OK)
-  async removeSessions(@Body() removeSessionsDto: RemoveSessionsDto) {
-    const data = await this.apiGatewayService.removeSessions(removeSessionsDto);
+  async removeSessions(
+    @Body() removeSessionsDto: RemoveSessionsDto,
+    @GetMetadata() meta: Metadata,
+  ) {
+    const data = await this.apiGatewayService.removeSessions(
+      removeSessionsDto,
+      meta,
+    );
     return {
       ...data,
       message: RESPONSE_MESSAGES.AUTH.REMOVE_SESSIONS,
