@@ -14,6 +14,12 @@ export const RESPONSE_MESSAGES = {
     UPDATE: 'Film updated successfully',
     REMOVE: 'Film removed successfully',
   },
+  USERS: {
+    FIND_MANY: 'Users retrieved successfully',
+    FIND_ONE: 'User retrieved successfully',
+    UPDATE: 'User updated successfully',
+    REMOVE: 'User removed successfully',
+  },
 } as const;
 
 Object.freeze(RESPONSE_MESSAGES);

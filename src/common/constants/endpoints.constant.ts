@@ -17,6 +17,13 @@ export const ENDPOINTS = {
     UPDATE: '/:id',
     REMOVE: '/:id',
   },
+  USERS: {
+    BASE: '/users',
+    FIND_MANY: '/',
+    FIND_ONE: '/:id',
+    UPDATE: '/:id',
+    REMOVE: '/:id',
+  },
 } as const;
 
 Object.freeze(ENDPOINTS);

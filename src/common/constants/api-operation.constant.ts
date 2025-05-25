@@ -47,6 +47,24 @@ export const API_OPERATION = {
       summary: 'Remove film operation',
     },
   },
+  USERS: {
+    FIND_MANY: {
+      description: 'Get all users with pagination, filtering and searching',
+      summary: 'Get all users operation',
+    },
+    FIND_ONE: {
+      description: 'Get user by ID',
+      summary: 'Get user by ID operation',
+    },
+    UPDATE: {
+      description: 'Update user information',
+      summary: 'Update user operation',
+    },
+    REMOVE: {
+      description: 'Remove user from the system',
+      summary: 'Remove user operation',
+    },
+  },
 } as const;
 
 Object.freeze(API_OPERATION);

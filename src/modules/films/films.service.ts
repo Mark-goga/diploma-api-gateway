@@ -5,15 +5,20 @@ import {
   FILM_SERVICE_NAME,
   FilmServiceClient,
 } from '@proto/films/films';
-import { CreateFilmDto, FindManyDtoValidator, UpdateFilmDto } from './dto';
+import { CreateFilmDto, UpdateFilmDto } from './dto';
 import { firstValueFrom } from 'rxjs';
 import { Metadata } from '@grpc/grpc-js';
+import { UsersService } from '@modules/users/users.service';
+import { FindManyDtoValidator } from '@common/dto/find-mant-documents.dto';
 
 @Injectable()
 export class FilmsService implements OnModuleInit {
   private filmService: FilmServiceClient;
 
-  constructor(@Inject(FILM_PACKAGE_NAME) private client: ClientGrpc) {}
+  constructor(
+    @Inject(FILM_PACKAGE_NAME) private client: ClientGrpc,
+    private readonly usersService: UsersService,
+  ) {}
 
   onModuleInit() {
     this.filmService =
@@ -30,16 +35,34 @@ export class FilmsService implements OnModuleInit {
     return await firstValueFrom(
       this.filmService.findAll({
         ...options,
+        search: '',
       }),
     );
   }
 
   async findOne(id: string) {
-    return await firstValueFrom(
+    const data = await firstValueFrom(
       this.filmService.findOne({
         id,
       }),
     );
+    if (!data.reviews?.length || !data.reviews[0]?.userId) {
+      return {
+        film: data.film,
+        reviews: [],
+      };
+    } else {
+      const enrichedReviews = await Promise.all(
+        data.reviews.map(async (review) => {
+          const user = await this.usersService.findOne(review.userId);
+          return { ...review, user };
+        }),
+      );
+      return {
+        film: data.film,
+        reviews: enrichedReviews,
+      };
+    }
   }
 
   async update(id: string, updateFilmDto: UpdateFilmDto, metadata: Metadata) {

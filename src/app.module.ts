@@ -3,6 +3,7 @@ import { LoggerModule } from 'nestjs-pino';
 import { CONFIG } from '@common/constants';
 import { AuthModule } from '@modules/auth/auth.module';
 import { FilmsModule } from '@modules/films/films.module';
+import { UsersModule } from '@modules/users/users.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { FilmsModule } from '@modules/films/films.module';
     }),
     AuthModule,
     FilmsModule,
+    UsersModule,
   ],
   controllers: [],
   providers: [],

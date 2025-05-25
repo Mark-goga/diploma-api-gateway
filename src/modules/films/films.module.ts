@@ -6,6 +6,7 @@ import { PROTO_PATH } from '@lib/src';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { FILM_PACKAGE_NAME } from '@proto/films/films';
 import { CONFIG } from '@common/constants';
+import { UsersModule } from '@modules/users/users.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { CONFIG } from '@common/constants';
         },
       },
     ]),
+    UsersModule,
   ],
   controllers: [FilmsController],
   providers: [FilmsService],

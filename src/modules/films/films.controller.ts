@@ -12,12 +12,13 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { FilmsService } from './films.service';
-import { CreateFilmDto, FindManyDtoValidator, UpdateFilmDto } from './dto';
+import { CreateFilmDto, UpdateFilmDto } from './dto';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { API_OPERATION, ENDPOINTS, RESPONSE_MESSAGES } from '@common/constants';
 import { TokenGuard } from '@common/guards';
 import { GetMetadata } from '@common/decorators';
 import { Metadata } from '@grpc/grpc-js';
+import { FindManyDtoValidator } from '@common/dto/find-mant-documents.dto';
 
 @ApiTags(ENDPOINTS.FILMS.BASE)
 @Controller(ENDPOINTS.FILMS.BASE)
