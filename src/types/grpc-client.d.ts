@@ -25,3 +25,27 @@ declare module '@proto/films/films' {
     remove(request: FindOneDocumentDto, meta: Metadata): Observable<Empty>;
   }
 }
+
+declare module '@proto/review/review' {
+  interface ReviewServiceClient {
+    createReview(request: CreateReviewDto, meta: Metadata): Observable<Review>;
+
+    findManyReviews(request: FindManyDto, meta: Metadata): Observable<Reviews>;
+
+    findOneReview(
+      request: FindOneDocumentDto,
+      meta: Metadata,
+    ): Observable<Review>;
+
+    findReviewsByFilm(
+      request: FindReviewsByFilmDto,
+      meta: Metadata,
+    ): Observable<Reviews>;
+
+    updateReview(request: UpdateReviewDto, meta: Metadata): Observable<Review>;
+    removeReview(
+      request: FindOneDocumentDto,
+      meta: Metadata,
+    ): Observable<Review>;
+  }
+}

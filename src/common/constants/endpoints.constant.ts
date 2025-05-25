@@ -24,6 +24,15 @@ export const ENDPOINTS = {
     UPDATE: '/:id',
     REMOVE: '/:id',
   },
+  REVIEWS: {
+    BASE: '/reviews',
+    CREATE: '/',
+    FIND_ALL: '/',
+    FIND_ONE: '/:id',
+    FIND_BY_FILM: '/film/:filmId',
+    UPDATE: '/:id',
+    REMOVE: '/:id',
+  },
 } as const;
 
 Object.freeze(ENDPOINTS);

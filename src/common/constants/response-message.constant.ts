@@ -20,6 +20,14 @@ export const RESPONSE_MESSAGES = {
     UPDATE: 'User updated successfully',
     REMOVE: 'User removed successfully',
   },
+  REVIEWS: {
+    CREATE: 'Review created successfully',
+    FIND_ALL: 'Reviews retrieved successfully',
+    FIND_ONE: 'Review retrieved successfully',
+    FIND_BY_FILM: 'Film reviews retrieved successfully',
+    UPDATE: 'Review updated successfully',
+    REMOVE: 'Review removed successfully',
+  },
 } as const;
 
 Object.freeze(RESPONSE_MESSAGES);

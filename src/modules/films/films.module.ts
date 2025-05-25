@@ -7,6 +7,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 import { FILM_PACKAGE_NAME } from '@proto/films/films';
 import { CONFIG } from '@common/constants';
 import { UsersModule } from '@modules/users/users.module';
+import { ReviewModule } from './review/review.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { UsersModule } from '@modules/users/users.module';
       },
     ]),
     UsersModule,
+    ReviewModule,
   ],
   controllers: [FilmsController],
   providers: [FilmsService],

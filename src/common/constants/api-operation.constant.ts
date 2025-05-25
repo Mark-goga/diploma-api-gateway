@@ -65,6 +65,32 @@ export const API_OPERATION = {
       summary: 'Remove user operation',
     },
   },
+  REVIEWS: {
+    CREATE: {
+      description: 'Create a new review for a film',
+      summary: 'Create review operation',
+    },
+    FIND_ALL: {
+      description: 'Get all reviews with pagination, filtering and searching',
+      summary: 'Get all reviews operation',
+    },
+    FIND_ONE: {
+      description: 'Get review by ID',
+      summary: 'Get review by ID operation',
+    },
+    FIND_BY_FILM: {
+      description: 'Get all reviews for a specific film',
+      summary: 'Get reviews by film ID operation',
+    },
+    UPDATE: {
+      description: 'Update review information',
+      summary: 'Update review operation',
+    },
+    REMOVE: {
+      description: 'Remove review from the system',
+      summary: 'Remove review operation',
+    },
+  },
 } as const;
 
 Object.freeze(API_OPERATION);

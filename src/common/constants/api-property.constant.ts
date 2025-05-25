@@ -49,6 +49,30 @@ export const API_PROPERTY = {
       example: 'film-background.jpg',
     },
   },
+  REVIEW: {
+    ID: {
+      description: 'Unique identifier for the review',
+      example: 'review-12345',
+    },
+    FILM_ID: {
+      description: 'ID of the film being reviewed',
+      example: 'film-12345',
+    },
+    TITLE: {
+      description: 'Title of the review',
+      example: 'Great Film!',
+    },
+    DESCRIPTION: {
+      description: 'Content of the review',
+      example: 'This film is an absolute masterpiece...',
+    },
+    RATING: {
+      description: 'Rating given to the film (1-10)',
+      example: 8,
+      minimum: 1,
+      maximum: 10,
+    },
+  },
 } as const;
 
 Object.freeze(API_PROPERTY);
