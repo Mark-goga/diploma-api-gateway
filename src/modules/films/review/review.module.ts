@@ -6,6 +6,7 @@ import { join } from 'path';
 import { PROTO_PATH } from '@lib/src';
 import { REVIEW_PACKAGE_NAME } from '@proto/review/review';
 import { CONFIG } from '@common/constants';
+import { UsersModule } from '@modules/users/users.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { CONFIG } from '@common/constants';
         },
       },
     ]),
+    UsersModule,
   ],
   controllers: [ReviewController],
   providers: [ReviewService],

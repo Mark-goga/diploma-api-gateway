@@ -32,6 +32,7 @@ export const ENDPOINTS = {
     FIND_BY_FILM: '/film/:filmId',
     UPDATE: '/:id',
     REMOVE: '/:id',
+    FIND_BY_USER: '/user/:userId',
   },
 } as const;
 

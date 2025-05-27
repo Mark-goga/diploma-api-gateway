@@ -27,6 +27,7 @@ export const RESPONSE_MESSAGES = {
     FIND_BY_FILM: 'Film reviews retrieved successfully',
     UPDATE: 'Review updated successfully',
     REMOVE: 'Review removed successfully',
+    FIND_BY_USER: 'User reviews retrieved successfully',
   },
 } as const;
 

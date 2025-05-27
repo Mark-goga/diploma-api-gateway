@@ -10,12 +10,16 @@ import {
   ReviewServiceClient,
 } from '@proto/review/review';
 import { Metadata } from '@grpc/grpc-js';
+import { UsersService } from '@modules/users/users.service';
 
 @Injectable()
 export class ReviewService implements OnModuleInit {
   private reviewService: ReviewServiceClient;
 
-  constructor(@Inject(REVIEW_PACKAGE_NAME) private client: ClientGrpc) {}
+  constructor(
+    @Inject(REVIEW_PACKAGE_NAME) private client: ClientGrpc,
+    private readonly usersService: UsersService,
+  ) {}
 
   onModuleInit() {
     this.reviewService =
@@ -86,5 +90,18 @@ export class ReviewService implements OnModuleInit {
         metadata,
       ),
     );
+  }
+
+  async findByUser(userId: string) {
+    const { reviews } = await firstValueFrom(
+      this.reviewService.findReviewsByUser({
+        id: userId,
+      }),
+    );
+    const user = await this.usersService.findOne(userId);
+    return {
+      reviews,
+      user,
+    };
   }
 }

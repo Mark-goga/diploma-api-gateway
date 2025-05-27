@@ -101,4 +101,14 @@ export class ReviewController {
       message: RESPONSE_MESSAGES.REVIEWS.REMOVE,
     };
   }
+
+  @ApiOperation(API_OPERATION.REVIEWS.GET_BY_USER)
+  @Get(ENDPOINTS.REVIEWS.FIND_BY_USER)
+  async findByUser(@Param('userId') userId: string) {
+    const data = await this.reviewService.findByUser(userId);
+    return {
+      ...data,
+      message: RESPONSE_MESSAGES.REVIEWS.FIND_BY_USER,
+    };
+  }
 }

@@ -90,6 +90,10 @@ export const API_OPERATION = {
       description: 'Remove review from the system',
       summary: 'Remove review operation',
     },
+    GET_BY_USER: {
+      description: 'Get all reviews created by the authenticated user',
+      summary: 'Get reviews by user operation',
+    },
   },
 } as const;
 
