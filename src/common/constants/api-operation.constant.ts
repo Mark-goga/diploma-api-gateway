@@ -94,6 +94,10 @@ export const API_OPERATION = {
       description: 'Get all reviews created by the authenticated user',
       summary: 'Get reviews by user operation',
     },
+    GET_PERSONAL_FILTERS_FOR_FILMS: {
+      description: 'Get personal filters for films based on user preferences',
+      summary: 'Get personal filters for films operation',
+    },
   },
 } as const;
 

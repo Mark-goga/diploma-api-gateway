@@ -33,6 +33,7 @@ export const ENDPOINTS = {
     UPDATE: '/:id',
     REMOVE: '/:id',
     FIND_BY_USER: '/user/:userId',
+    GET_PERSONAL_FILTERS_FOR_FILMS: '/personal/filters/:userId',
   },
 } as const;
 

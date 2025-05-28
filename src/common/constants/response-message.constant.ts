@@ -28,6 +28,8 @@ export const RESPONSE_MESSAGES = {
     UPDATE: 'Review updated successfully',
     REMOVE: 'Review removed successfully',
     FIND_BY_USER: 'User reviews retrieved successfully',
+    GET_PERSONAL_FILTERS_FOR_FILMS:
+      'Personal filters for films retrieved successfully',
   },
 } as const;
 

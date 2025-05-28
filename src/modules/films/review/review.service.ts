@@ -104,4 +104,12 @@ export class ReviewService implements OnModuleInit {
       user,
     };
   }
+
+  async getPersonalFiltersForFilms(userId: string) {
+    return await firstValueFrom(
+      this.reviewService.getPersonalFiltersForFilms({
+        id: userId,
+      }),
+    );
+  }
 }

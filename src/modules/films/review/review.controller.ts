@@ -111,4 +111,14 @@ export class ReviewController {
       message: RESPONSE_MESSAGES.REVIEWS.FIND_BY_USER,
     };
   }
+
+  @ApiOperation(API_OPERATION.REVIEWS.GET_PERSONAL_FILTERS_FOR_FILMS)
+  @Get(ENDPOINTS.REVIEWS.GET_PERSONAL_FILTERS_FOR_FILMS)
+  async getPersonalFiltersForFilms(@Param('userId') userId: string) {
+    const data = await this.reviewService.getPersonalFiltersForFilms(userId);
+    return {
+      ...data,
+      message: RESPONSE_MESSAGES.REVIEWS.GET_PERSONAL_FILTERS_FOR_FILMS,
+    };
+  }
 }
